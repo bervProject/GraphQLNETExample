@@ -1,3 +1,5 @@
+namespace GraphQLNetExample.Notes;
+
 public class Note
 {
   public Guid Id { get; set; }
