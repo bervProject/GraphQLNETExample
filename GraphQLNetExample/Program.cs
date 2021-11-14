@@ -1,17 +1,22 @@
-using GraphQL;
 using GraphQL.MicrosoftDI;
 using GraphQL.Server;
 using GraphQL.SystemTextJson;
 using GraphQL.Types;
+using GraphQLNetExample.EntityFramework;
 using GraphQLNetExample.Notes;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<NotesContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+});
 builder.Services.AddSingleton<ISchema, NotesSchema>(services => new NotesSchema(new SelfActivatingServiceProvider(services)));
 builder.Services.AddGraphQL(options =>
                 {
-                options.EnableMetrics = true;
+                    options.EnableMetrics = true;
                 })
                 .AddSystemTextJson();
 builder.Services.AddControllers();
