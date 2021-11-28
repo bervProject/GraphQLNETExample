@@ -11,7 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<NotesContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+    // options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+    options.UseInMemoryDatabase("NotesTest");
 });
 builder.Services.AddSingleton<ISchema, NotesSchema>(services => new NotesSchema(new SelfActivatingServiceProvider(services)));
 builder.Services.AddGraphQL(options =>
