@@ -1,0 +1,22 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: weekly
+    time: "08:00"
+    timezone: Asia/Jakarta
+  open-pull-requests-limit: 100
+
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: saturday
+    time: "08:00"
+    timezone: Asia/Jakarta
+  open-pull-requests-limit: 100
+  reviewers:
+  - berviantoleo
+  assignees:
+  - berviantoleo
