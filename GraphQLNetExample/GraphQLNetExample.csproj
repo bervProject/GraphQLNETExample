@@ -9,8 +9,7 @@
   <ItemGroup>
     <PackageReference Include="GraphQL" Version="7.0.2" />
     <PackageReference Include="GraphQL.MicrosoftDI" Version="7.0.2" />
-    <PackageReference Include="GraphQL.Server.Authorization.AspNetCore" Version="7.1.0" />
-    <PackageReference Include="GraphQL.Server.Transports.AspNetCore.SystemTextJson" Version="5.2.2" />
+    <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="7.1.0" />
     <PackageReference Include="GraphQL.Server.Ui.Altair" Version="7.1.0" />
     <PackageReference Include="GraphQL.SystemTextJson" Version="7.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
