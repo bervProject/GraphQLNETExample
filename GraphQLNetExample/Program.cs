@@ -1,6 +1,5 @@
+using GraphQL;
 using GraphQL.MicrosoftDI;
-using GraphQL.Server;
-using GraphQL.SystemTextJson;
 using GraphQL.Types;
 using GraphQLNetExample.EntityFramework;
 using GraphQLNetExample.Notes;
@@ -15,10 +14,8 @@ builder.Services.AddDbContext<NotesContext>(options =>
 });
 builder.Services.AddSingleton<ISchema, NotesSchema>(services => new NotesSchema(new SelfActivatingServiceProvider(services)));
 builder.Services.AddGraphQL(options =>
-                {
-                    options.EnableMetrics = true;
-                })
-                .AddSystemTextJson();
+                    options.AddSystemTextJson()
+                );
 
 builder.Services.AddCors(options =>
 {
@@ -54,6 +51,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseGraphQL<ISchema>();
+app.UseGraphQL();
 
 app.Run();
