@@ -14,7 +14,11 @@ builder.Services.AddDbContext<NotesContext>(options =>
 });
 builder.Services.AddSingleton<ISchema, NotesSchema>(services => new NotesSchema(new SelfActivatingServiceProvider(services)));
 builder.Services.AddGraphQL(options =>
-                    options.AddSystemTextJson()
+                    options.ConfigureExecution((opt, next) =>
+                    {
+                        opt.EnableMetrics = true;
+                        return next(opt);
+                    }).AddSystemTextJson()
                 );
 
 builder.Services.AddCors(options =>
