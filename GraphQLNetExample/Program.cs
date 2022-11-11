@@ -24,9 +24,9 @@ builder.Services.AddGraphQL(options =>
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(
-        builder =>
+        policyBuilder =>
         {
-            builder.WithOrigins("*")
+            policyBuilder.WithOrigins("*")
                    .AllowAnyHeader();
         });
 });
