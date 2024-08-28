@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GraphQL" Version="7.8.0" />
-    <PackageReference Include="GraphQL.MicrosoftDI" Version="7.8.0" />
-    <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="7.7.1" />
+    <PackageReference Include="GraphQL" Version="8.0.1" />
+    <PackageReference Include="GraphQL.MicrosoftDI" Version="8.0.0" />
+    <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="8.0.0" />
     <PackageReference Include="GraphQL.Server.Ui.Altair" Version="7.7.1" />
-    <PackageReference Include="GraphQL.SystemTextJson" Version="7.8.0" />
+    <PackageReference Include="GraphQL.SystemTextJson" Version="8.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
